@@ -42,7 +42,7 @@ final as (
 
     left join customer_orders using (customer_id)
 
-    left join facts_orders using (customer_id)
+    left join {{ref('facts_orders')}} using (customer_id)
 
     group by 1,2,3,4,5,6
 
