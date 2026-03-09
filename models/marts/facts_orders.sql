@@ -1,7 +1,7 @@
 SELECT
     orders.order_id,
     orders.customer_id,
-    sum(payments.amount_local) as amount_local
+    sum(payments.amount_usd) as amount_usd
 FROM {{ref('stg_jaffle_shop__orders')}} as orders
 left join {{ref('stg_stripe__payments')}} as payments
     using(order_id)
