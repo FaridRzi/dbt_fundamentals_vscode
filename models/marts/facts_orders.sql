@@ -1,0 +1,8 @@
+SELECT
+    orders.order_id,
+    orders.customer_id,
+    sum(payments.amount_local) as amount_local
+FROM {{ref('stg_jaffle_shop__orders')}} as orders
+left join {{ref('stg_stripe__payments')}} as payments
+    on orders.order_id = payments.order_id
+GROUP BY 1,2
