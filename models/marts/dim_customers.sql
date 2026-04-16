@@ -8,7 +8,12 @@ orders as (
 
     select * from {{ ref('stg_jaffle_shop__orders') }}
 
+),
 
+facts_orders as (
+
+    select * from {{ ref('facts_orders') }}
+    
 ),
 
 customer_orders as (
