@@ -1,0 +1,13 @@
+macros:
+  - name: cents_to_dollars
+    description: "Convert an amount in cents to dollars, with optional decimal places."
+    arguments:
+      - name: amount
+        description: "The amount in cents to be converted to dollars."
+        type: "numeric"
+      - name: decimals
+        description: "The number of decimal places to round the result to (default is 2)."
+        type: "integer"
+  
+  - name: limit_dev
+    description: "Return a SQL LIMIT clause for development environments to restrict the number of rows returned"
