@@ -1,3 +1,10 @@
+{{ 
+    config(
+        materialized='ephemeral'
+        ) 
+        
+}}
+
 SELECT
     orders.order_id,
     orders.customer_id,
