@@ -7,6 +7,14 @@ models:
         data_tests:
           - not_null
           - unique
+      - name: first_name
+        description: The customer's first name
+        data_tests:
+          - dbt_utils.not_empty_string
+      - name: last_name
+        description: The customer's last name
+        data_tests:
+          - dbt_utils.not_empty_string
   - name: stg_jaffle_shop__orders
     description: One order per row
     columns:
